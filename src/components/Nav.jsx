@@ -66,14 +66,14 @@ export default function Nav() {
                 style={{ background: "var(--accent)" }}
                 aria-hidden
               />
-              <span className="sr-only">Aljesh Raut — Atelier of Code</span>
+              <span className="sr-only">Anis Raut (Aljesh) — Atelier of Code</span>
             </span>
             <span className="hidden sm:flex flex-col leading-[1.05]">
               <span
                 className="font-display text-[19px]"
                 style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 1', letterSpacing: "-0.02em" }}
               >
-                Aljesh <span className="font-italic" style={{ color: "var(--accent)" }}>Raut</span>
+                Anis <span className="font-italic" style={{ color: "var(--accent)" }}>Raut</span>
               </span>
               <span className="mono text-[9px] tracking-[0.24em] uppercase opacity-65 mt-1">
                 Software Atelier <span className="opacity-50">·</span> Local <span className="opacity-50">→</span> Global

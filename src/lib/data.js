@@ -1,5 +1,6 @@
 export const PROFILE = {
-  name: "Aljesh Raut",
+  name: "Anis Raut",
+  alias: "Aljesh",
   initials: "A.R.",
   role: "Independent Software Craftsman",
   city: "Kathmandu, Nepal",
@@ -9,7 +10,6 @@ export const PROFILE = {
   whatsapp: "9779819963606",
   schedule: "https://cal.com/aljesh",
   github: "https://github.com/aljeshraut",
-  // The "scheduled call" link can be swapped to any cal/calendly when ready.
 };
 
 export const NAV = [

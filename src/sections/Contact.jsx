@@ -131,7 +131,7 @@ export default function Contact() {
       </div>
 
       <div className="border-t border-white/10 px-4 sm:px-8 lg:px-12 py-6 flex flex-wrap items-center justify-between gap-3 mono text-[10px] uppercase tracking-[0.22em] opacity-70">
-        <span>© MMXXVI · Aljesh Raut · Atelier of Code</span>
+        <span>© MMXXVI · Anis Raut (Aljesh) · Atelier of Code</span>
         <span className="flex items-center gap-2">
           <span className="star" style={{ width: 10, height: 10, color: "var(--accent-2)" }} />
           Crafted in Kathmandu · Edged from Cloudflare

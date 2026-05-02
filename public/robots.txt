@@ -1,5 +1,5 @@
-# https://aljesh-portfolio.pages.dev/robots.txt
-# Aljesh Raut — Atelier of Code
+# https://anisraut.com.np/robots.txt
+# Anis Raut (Aljesh) — Atelier of Code
 
 User-agent: *
 Allow: /
@@ -74,4 +74,4 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemap & LLM-readable summary
-Sitemap: https://aljesh-portfolio.pages.dev/sitemap.xml
+Sitemap: https://anisraut.com.np/sitemap.xml

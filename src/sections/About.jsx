@@ -31,7 +31,7 @@ export default function About() {
             <motion.div style={{ y: portraitY, scale: portraitScale }} className="absolute inset-0">
               <img
                 src="/portrait.jpg"
-                alt="Aljesh Raut, photographed in Kathmandu"
+                alt="Anis Raut (Aljesh), photographed in Kathmandu"
                 className="h-full w-full object-cover duotone"
                 loading="lazy"
               />
@@ -73,7 +73,10 @@ export default function About() {
                   fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 1',
                 }}
               >
-                Aljesh Raut
+                Anis Raut
+              </span>{" "}
+              <span className="opacity-55 text-[0.55em] align-baseline tracking-[0.04em]">
+                (also known as Aljesh)
               </span>{" "}
               — a{" "}
               <span style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 1' }}>
