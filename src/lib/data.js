@@ -174,11 +174,41 @@ export const WORK = [
     summary: "Premium Kathmandu gym — membership tiers, transformation stories, trainer profiles and class booking.",
     stack: ["React", "Tailwind", "Cloudflare Workers"],
   },
+  {
+    num: "06",
+    client: "SkinCura",
+    type: "Skincare · Brand & Consults",
+    year: "2026",
+    url: "https://skincura.pages.dev/",
+    image: "/work/skincura.png",
+    summary: "Editorial skincare brand site — expert dermatology and aesthetic care, product catalogue and consultation booking flow.",
+    stack: ["React", "Tailwind", "Cloudflare Pages"],
+  },
+  {
+    num: "07",
+    client: "Angel Hair Braids",
+    type: "Salon · Booking",
+    year: "2026",
+    url: "https://angelhairbraids.pages.dev/",
+    image: "/work/angelhairbraids.png",
+    summary: "The art of braiding — salon brand site with services, hair-care guide, gallery, testimonials and online appointment booking.",
+    stack: ["React", "Tailwind", "Cloudflare Pages"],
+  },
+  {
+    num: "08",
+    client: "1kReach",
+    type: "Content · SEO · Blog",
+    year: "2026",
+    url: "https://1kreach.com/",
+    image: "",
+    summary: "Where I publish original SEO, AEO & GEO writing — long-form blogs, technical guides and growth content. Live editorial output, not theory.",
+    stack: ["SEO", "AEO", "GEO", "Content"],
+  },
 ];
 
 export const STATS = [
-  { num: "10+", label: "Projects shipped & live" },
-  { num: "2026", label: "Practice founded" },
+  { num: "12+", label: "Projects shipped & live" },
+  { num: "2026", label: "Freelancing since" },
   { num: "Solo / Team", label: "Open to either" },
   { num: "BCA · TU", label: "Bachelor in Computer Application" },
 ];

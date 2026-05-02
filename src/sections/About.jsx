@@ -94,26 +94,26 @@ export default function About() {
           </FadeUp>
 
           <FadeUp delay={0.08}>
-            <p className="mt-8 max-w-2xl text-[15px] sm:text-base leading-[1.6] text-[var(--fg-soft)]">
-              I run a freelance practice <span className="text-[var(--fg)]">and</span> work with a US-registered digital studio — <a href="https://bitmicrosys.com" target="_blank" rel="noopener noreferrer" className="text-[var(--fg)] link-underline">Bitmicrosys LLC</a> — handling SEO, AEO, GEO, technical blog writing and growth-side engineering for international clients. So you get a freelancer's velocity with a studio's discipline behind it.
+            <p className="mt-8 max-w-2xl text-[15px] sm:text-base leading-[1.65] text-[var(--fg-soft)] body-justify">
+              I freelance independently <span className="text-[var(--fg)]">and</span> as part of <a href="https://bitmicrosys.com" target="_blank" rel="noopener noreferrer" className="text-[var(--fg)] link-underline">Bitmicrosys LLC</a> — taking on engineering, SEO, AEO, GEO and technical-blog work for international clients. SEO, AEO, GEO and content writing are my own craft; I'm the person doing the keyword research, the schema markup and the long-form pieces, not handing it off. You can read the live output at <a href="https://1kreach.com" target="_blank" rel="noopener noreferrer" className="text-[var(--fg)] link-underline">1kReach.com</a> — original blogs, primarily SEO-driven, published on the open web.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.14}>
-            <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.6] text-[var(--fg-soft)]">
-              The practice is young — founded in <span className="text-[var(--fg)]">2026</span> — but the shipping list isn't. <span className="text-[var(--fg)]">10+ projects deployed and live</span>: cafe and restaurant sites, an e-commerce wholesale portal, a coach-and-athlete training platform, and brand sites for hospitality and retail. I move fast, learn faster, and finish what I start.
+            <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.65] text-[var(--fg-soft)] body-justify">
+              I started freelancing in <span className="text-[var(--fg)]">2026</span> — only a few months in, but the shipping list isn't short. <span className="text-[var(--fg)]">12+ projects deployed and live</span>: cafe, bar and restaurant sites, premium gym, heritage dining, skincare brand, salon booking, plus the content/SEO work at 1kReach. I move fast, learn faster, and finish what I start.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.6] text-[var(--fg-soft)]">
-              I'm equally comfortable <span className="text-[var(--fg)]">leading a project end-to-end</span> as I am <span className="text-[var(--fg)]">embedding into your team</span> as the dev who actually ships. My current studio engagement runs that way — async, accountable, weekly demos. I'm not a lone-wolf; I just believe a small accountable team beats a big committee, every time.
+            <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.65] text-[var(--fg-soft)] body-justify">
+              I'm equally comfortable <span className="text-[var(--fg)]">leading a project end-to-end</span> as I am <span className="text-[var(--fg)]">embedding into your team</span> as the dev who actually ships. The studio work runs that way — async, accountable, weekly demos. I'm not a lone-wolf; I just believe a small accountable team beats a big committee, every time.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.26}>
-            <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.6] text-[var(--fg-soft)]">
-              Stack is <span className="text-[var(--fg)]">React, TypeScript, Cloudflare</span> (Pages, Workers, D1, R2, KV) — paired with motion design that earns its keep, and SEO/AEO/GEO baked in from the first commit, not bolted on later. If you want a developer who treats <span className="font-italic">discoverability</span> and <span className="font-italic">performance</span> as part of the build — not a phase 2 — we'll get along.
+            <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.65] text-[var(--fg-soft)] body-justify">
+              Stack is <span className="text-[var(--fg)]">React, TypeScript, Cloudflare</span> (Pages, Workers, D1, R2, KV) — paired with motion design that earns its keep, and SEO baked in from the first commit, not bolted on later. If you want a developer who treats <span className="font-italic">discoverability</span> and <span className="font-italic">performance</span> as part of the build — not a phase 2 — we'll get along.
           </p>
           </FadeUp>
 
@@ -122,12 +122,12 @@ export default function About() {
               {[
                 ["Lives in", "Kathmandu, NP"],
                 ["Studies", "BCA · TU"],
-                ["Working with", "Bitmicrosys LLC (US)"],
+                ["Freelances at", "Bitmicrosys LLC"],
+                ["Writes at", "1kReach.com"],
                 ["Reads in", "EN · NE · HI"],
                 ["Ships from", "UTC+5:45"],
                 ["Stack", "TS · React · CF"],
-                ["Practice", "Founded 2026"],
-                ["Engages as", "Freelance or embed"],
+                ["Started", "2026"],
                 ["Status", "Open · 24/7"],
               ].map(([k, v]) => (
                 <div key={k} className="border border-[var(--line)] rounded-md p-3">

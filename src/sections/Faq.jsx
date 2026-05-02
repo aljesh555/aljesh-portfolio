@@ -50,7 +50,7 @@ export default function Faq() {
                       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                       style={{ overflow: "hidden" }}
                     >
-                      <p className="pb-6 max-w-2xl text-[15px] leading-[1.6] text-[var(--fg-soft)]">{f.a}</p>
+                      <p className="pb-6 max-w-2xl text-[15px] leading-[1.65] text-[var(--fg-soft)] body-justify">{f.a}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

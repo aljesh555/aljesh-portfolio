@@ -247,6 +247,19 @@ html.dark .grain::before { mix-blend-mode: screen; }
   .marquee-track, .spin-slow { animation: none; }
 }
 
+.body-justify {
+  text-align: justify;
+  text-justify: inter-word;
+  text-wrap: pretty;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hanging-punctuation: first allow-end last;
+}
+@media (max-width: 640px) {
+  /* Avoid ugly wide gaps on narrow viewports */
+  .body-justify { text-align: left; hyphens: none; }
+}
+
 .duotone {
   filter: contrast(1.05) saturate(1.05);
 }

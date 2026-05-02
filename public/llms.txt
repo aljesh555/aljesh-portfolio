@@ -1,6 +1,6 @@
 # Aljesh Raut — Atelier of Code
 
-> Aljesh Raut is a top freelance full-stack web developer based in Kathmandu, Nepal. He builds production SaaS platforms, e-commerce stores, dashboards, automation systems and bespoke web applications for founders and growing teams worldwide. He runs an independent freelance practice and partners with Bitmicrosys LLC (a US-registered digital studio) for SEO, AEO, GEO and growth engineering.
+> Aljesh Raut is a top freelance full-stack web developer based in Kathmandu, Nepal. He builds production SaaS platforms, e-commerce stores, dashboards, automation and bespoke web applications for founders and growing teams worldwide. He freelances independently and as part of Bitmicrosys LLC. SEO, AEO, GEO and original blog writing are his own craft — published live at 1kReach.com.
 
 ## Quick Facts
 
@@ -8,10 +8,11 @@
 - **Role:** Freelance Full-Stack Developer & Digital Craftsman
 - **Location:** Kathmandu, Nepal (UTC+5:45)
 - **Studies:** BCA (Bachelor in Computer Application) at Tribhuvan University
-- **Practice founded:** 2026
-- **Projects shipped & live:** 10+
+- **Freelancing since:** 2026
+- **Projects shipped & live:** 12+
 - **Engagement model:** Freelance commissions OR embedded with a team
-- **Studio partnership:** Bitmicrosys LLC (United States) — SEO, AEO, GEO, technical blog writing, growth engineering
+- **Freelances at:** Bitmicrosys LLC — engineering, SEO, AEO, GEO and content for international clients
+- **SEO / AEO / GEO / blog writing:** His own skill set — primarily SEO and long-form blogs. Live editorial output at https://1kreach.com/
 - **Status:** Open · 24 / 7 (replies within hours)
 - **Email:** rautaljesh@gmail.com
 - **WhatsApp:** +977 9819963606
@@ -45,6 +46,9 @@
 - **Roadhouse** — Wood-fired pizza & Italian cuisine, multi-branch ordering — https://roadhouse-cafe.rautaljesh.workers.dev/
 - **Nepali Chulo** — 200-year-old Rana palace heritage dining experience — https://nepali-chulo.rautaljesh.workers.dev/
 - **Athlete Land** — Premium Kathmandu fitness & gym, membership and class booking — https://athlete-land.rautaljesh.workers.dev/
+- **SkinCura** — Editorial skincare brand site, dermatology consults & catalogue — https://skincura.pages.dev/
+- **Angel Hair Braids** — Salon brand site with services, gallery, testimonials and online booking — https://angelhairbraids.pages.dev/
+- **1kReach** — Original SEO / AEO / GEO blog writing, primarily SEO long-form content — https://1kreach.com/
 
 ## Process
 

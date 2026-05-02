@@ -125,19 +125,38 @@ function WorkCard({ item, cover, index }) {
           </motion.div>
         </div>
 
-        <div className="mt-4 flex items-baseline justify-between gap-3">
-          <div className="min-w-0">
-            <h3 className="font-display text-lg sm:text-xl link-underline truncate">{item.client}</h3>
-            <p className="mono text-[9px] uppercase tracking-[0.18em] opacity-60 mt-0.5">{item.type}</p>
+        <div className="mt-5 flex items-baseline justify-between gap-3">
+          <div className="min-w-0 flex-1">
+            <h3
+              className="font-display text-[17px] sm:text-[19px] leading-[1.1] tracking-[-0.02em] truncate"
+              style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 0' }}
+            >
+              {item.client}
+            </h3>
+            <p className="mono text-[9.5px] uppercase tracking-[0.22em] opacity-55 mt-1.5">
+              {item.type}
+            </p>
           </div>
-          <span className="mono text-[9px] uppercase tracking-[0.18em] opacity-60 shrink-0 inline-flex items-center gap-1">
-            Visit <ArrowUpRight size={10} />
+          <span
+            className="mono text-[9px] uppercase tracking-[0.22em] opacity-50 shrink-0 inline-flex items-center gap-1 mt-1 group-hover:opacity-100 transition-opacity"
+            style={{ color: "var(--accent)" }}
+          >
+            <span className="hidden sm:inline">Visit</span>
+            <ArrowUpRight size={11} strokeWidth={1.6} />
           </span>
         </div>
-        <p className="mt-2 text-[12.5px] leading-[1.5] text-[var(--fg-soft)] line-clamp-2">{item.summary}</p>
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {item.stack.slice(0, 3).map((s) => (
-            <span key={s} className="chip" style={{ fontSize: "0.6rem", padding: "0.2rem 0.55rem" }}>{s}</span>
+        <p
+          className="mt-3 text-[13px] leading-[1.55] text-[var(--fg-soft)] body-justify line-clamp-3"
+          style={{ letterSpacing: "-0.005em" }}
+        >
+          {item.summary}
+        </p>
+        <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 mono text-[9px] uppercase tracking-[0.2em] opacity-55">
+          {item.stack.slice(0, 4).map((s, i) => (
+            <span key={s} className="inline-flex items-center gap-2">
+              {i > 0 && <span className="opacity-50">·</span>}
+              {s}
+            </span>
           ))}
         </div>
       </a>

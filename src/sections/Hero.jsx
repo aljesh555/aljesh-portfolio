@@ -33,7 +33,7 @@ export default function Hero() {
       {/* Top status strip */}
       <div className="relative z-10 px-4 sm:px-8 lg:px-12 pt-24 sm:pt-28">
         <div className="flex flex-wrap items-center justify-between gap-3 mono text-[10px] uppercase tracking-[0.22em] opacity-80">
-          <span>Independent Practice · Est. 2026</span>
+          <span>Freelancer · Since 2026</span>
           <span className="hidden sm:inline">{PROFILE.region}</span>
           <span className="flex items-center gap-2">
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full" style={{ background: "var(--accent)" }}>
@@ -68,19 +68,19 @@ export default function Hero() {
 
             <Mask delay={0.3} className="mt-6">
               <span className="mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] opacity-70">
-                — a freelance practice · est. MMXXVI
+                — freelancing · since MMXXVI
               </span>
             </Mask>
 
             <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-12 gap-6 max-w-3xl">
-              <p className="sm:col-span-7 text-[15px] sm:text-base leading-[1.55] text-[var(--fg-soft)]">
-                <span className="text-[var(--fg)]">Aljesh Raut</span> — full-stack developer from Kathmandu, building SaaS, dashboards, automation, e-commerce and bespoke web products for founders worldwide. Freelance practice <span className="text-[var(--fg)]">+</span> partner at <span className="text-[var(--fg)]">Bitmicrosys LLC (US)</span> for SEO, AEO, GEO and growth engineering. <span className="text-[var(--fg)]">Built locally · delivered globally</span> — engineered with intent, finished with care.
+              <p className="sm:col-span-7 text-[15px] sm:text-base leading-[1.6] text-[var(--fg-soft)] body-justify">
+                <span className="text-[var(--fg)]">Aljesh Raut</span> — full-stack developer from Kathmandu, building SaaS, dashboards, automation, e-commerce and bespoke web products for founders worldwide. Freelancer at <a href="https://bitmicrosys.com" target="_blank" rel="noopener noreferrer" className="text-[var(--fg)] link-underline">Bitmicrosys LLC</a>, and the writer behind <a href="https://1kreach.com" target="_blank" rel="noopener noreferrer" className="text-[var(--fg)] link-underline">1kReach.com</a> — original SEO, AEO and GEO content, published live. <span className="text-[var(--fg)]">Built locally · delivered globally</span> — engineered with intent, finished with care.
               </p>
               <div className="sm:col-span-5 flex flex-col gap-2 mono text-[10px] uppercase tracking-[0.2em] opacity-80">
-                <span>Practising in</span>
+                <span>Working in</span>
                 <span className="text-[var(--fg)]">SaaS · Dashboards · Automation</span>
                 <span className="text-[var(--fg)]">Commerce · Apps · APIs</span>
-                <span className="text-[var(--fg)]">SEO · AEO · GEO · Content</span>
+                <span className="text-[var(--fg)]">SEO · AEO · GEO · Blogs</span>
                 <span className="opacity-60 normal-case tracking-[0.18em]">Local → National → Global</span>
               </div>
             </div>
