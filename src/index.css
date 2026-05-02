@@ -111,6 +111,10 @@ html.dark .grain::before { mix-blend-mode: screen; }
   animation: marquee 38s linear infinite;
   width: max-content;
 }
+.marquee-track--slow {
+  animation-duration: 110s;
+  gap: 2.5rem;
+}
 @keyframes marquee {
   to { transform: translateX(-50%); }
 }

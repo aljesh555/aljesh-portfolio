@@ -122,67 +122,98 @@ export const PROCESS = [
   },
 ];
 
+// Live deployed projects. Update `url` if domains change.
 export const WORK = [
   {
     num: "01",
-    client: "Anis · Personal",
-    type: "Brand & Folio",
+    client: "Northfield Cafe & Jesse James Bar",
+    type: "Cafe · Bar · Live Music",
     year: "2026",
-    summary: "Editorial single-page folio for a creative — cinematic scroll, R3F vignette, CMS-light content.",
-    stack: ["Next.js", "Framer", "R3F"],
+    url: "https://northfield-cafe.rautaljesh.workers.dev/",
+    image: "/work/northfield.png",
+    summary: "Editorial site for a Thamel cafe & bar — garden courtyard, menu, live-music calendar and WhatsApp reservation flow.",
+    stack: ["React", "Tailwind", "Cloudflare Workers"],
   },
   {
     num: "02",
-    client: "Atlantic Seafood",
-    type: "E-commerce",
-    year: "2025",
-    summary: "Wholesale catalogue and order portal for a regional importer. Tiered pricing, bulk PDFs, edge cache.",
-    stack: ["Cloudflare Pages", "D1", "Stripe"],
+    client: "Atlantic Seafood & Bar",
+    type: "Restaurant · Reservations",
+    year: "2026",
+    url: "https://atlantic-seafood.rautaljesh.workers.dev/",
+    image: "/work/atlantic.png",
+    summary: "Premium seafood restaurant site — photographic gallery, menu, location and table reservation via WhatsApp.",
+    stack: ["React", "Tailwind", "Cloudflare Workers"],
   },
   {
     num: "03",
-    client: "Athlete Land",
-    type: "Training Platform",
-    year: "2025",
-    summary: "Programme builder for coaches with athlete dashboards, video drills and weekly compliance scoring.",
-    stack: ["React", "Hono", "R2"],
+    client: "Roadhouse",
+    type: "Italian Restaurant · Branches",
+    year: "2026",
+    url: "https://roadhouse-cafe.rautaljesh.workers.dev/",
+    image: "/work/roadhouse.png",
+    summary: "Wood-fired pizza & Italian cuisine — multi-branch site with branch selector, menu, online ordering and cart.",
+    stack: ["React", "Tailwind", "Cloudflare Workers"],
   },
   {
     num: "04",
     client: "Nepali Chulo",
-    type: "Restaurant Site",
-    year: "2025",
-    summary: "Hospitality site with reservation flow, photographic editorial menus and a multilingual story chapter.",
-    stack: ["Astro", "Tailwind", "Workers"],
+    type: "Heritage Dining · Cultural Show",
+    year: "2026",
+    url: "https://nepali-chulo.rautaljesh.workers.dev/",
+    image: "/work/nepali-chulo.png",
+    summary: "200-year-old Rana palace dining experience — candlelit haveli, cultural shows, story chapter and reservations.",
+    stack: ["React", "Tailwind", "Cloudflare Workers"],
+  },
+  {
+    num: "05",
+    client: "Athlete Land",
+    type: "Premium Fitness · Gym",
+    year: "2026",
+    url: "https://athlete-land.rautaljesh.workers.dev/",
+    image: "/work/athlete-land.png",
+    summary: "Premium Kathmandu gym — membership tiers, transformation stories, trainer profiles and class booking.",
+    stack: ["React", "Tailwind", "Cloudflare Workers"],
   },
 ];
 
 export const STATS = [
-  { num: "06+", label: "Years writing software" },
-  { num: "20+", label: "Products shipped" },
-  { num: "100%", label: "Built solo, end-to-end" },
-  { num: "TU", label: "B.Sc. CSIT, in progress" },
+  { num: "10+", label: "Projects shipped & live" },
+  { num: "2026", label: "Practice founded" },
+  { num: "Solo / Team", label: "Open to either" },
+  { num: "BCA · TU", label: "Bachelor in Computer Application" },
 ];
 
 export const FAQS = [
   {
     q: "How do we start?",
-    a: "A 30-minute call. If we're a fit, I send a one-page proposal within 48 hours — scope, milestones, fixed price.",
+    a: "A 30-minute discovery call — free, no pitch. If we're a fit, you receive a one-page proposal within 48 hours: scope, milestones, deliverables, timeline and a fixed price. No surprises, no padded retainers.",
   },
   {
     q: "What does a typical engagement look like?",
-    a: "Two to ten weeks. Daily commits to a staging URL, a Friday demo, and a single Slack/WhatsApp thread for everything.",
+    a: "Two to ten weeks, depending on scope. Daily commits to a private staging URL so you watch the product grow in real time. A Friday demo each week. A single Slack or WhatsApp thread for the whole engagement — no scattered emails, no status meetings that should have been a Loom.",
+  },
+  {
+    q: "How do meetings work?",
+    a: "Lightweight by design. One 30-minute kick-off, then weekly 20-minute Friday demos over Google Meet or Zoom. Mid-week communication is async — Loom videos, screenshots, and a single thread. If something is genuinely blocking, we hop on a call within hours; otherwise async wins.",
+  },
+  {
+    q: "What documentation do I receive?",
+    a: "Everything you need to own the product after handover: a one-page architecture brief, an environment & deployment runbook, a credentials handover (1Password / Bitwarden), an admin walkthrough video, and inline code comments where decisions were non-obvious. Your team should never feel they inherited a black box.",
+  },
+  {
+    q: "How do payments work — pre-pay or post-pay?",
+    a: "A simple split. 50% on signed proposal (kicks off the build), 50% on handover before deploy keys transfer. For longer engagements (6+ weeks) we move to milestone-based: 30% kick-off, 40% mid-build demo, 30% on handover. Invoices via Stripe, Wise, or bank transfer (NPR / USD / EUR).",
   },
   {
     q: "Do you take equity instead of cash?",
-    a: "Sometimes — for a specific class of early-stage founders solving a problem I find serious. Ask, with context.",
+    a: "Occasionally — for a narrow class of pre-seed founders solving a problem I find serious, with a credible team. Approach with context: deck, founding team, what's been built, why now. Most engagements remain straightforward fee-for-work.",
   },
   {
-    q: "Why work alone, not as an agency?",
-    a: "Because the best products I've used were built by one or two people who could hold the whole thing in their head.",
+    q: "Do you work solo, or with a team?",
+    a: "Both. I run an independent freelance practice in Kathmandu and partner with Bitmicrosys LLC (US) on growth engineering, SEO, AEO and GEO. For most product builds I lead end-to-end as the responsible developer; for bigger scopes I bring in trusted designers and a copywriter from the studio bench. You get a single point of accountability either way.",
   },
   {
-    q: "Where are you based?",
-    a: "Kathmandu, Nepal (UTC+5:45). I work with founders and teams locally, nationally and globally — overlapping comfortably with EU mornings and US evenings.",
+    q: "Where are you based, and what hours?",
+    a: "Kathmandu, Nepal (UTC+5:45). I overlap comfortably with EU mornings and US evenings, and reply within hours — typically minutes during business windows. Status: Open · 24/7 means urgent issues get an answer the same day, not the next business day.",
   },
 ];

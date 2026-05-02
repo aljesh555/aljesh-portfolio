@@ -25,13 +25,25 @@ function Loader({ done }) {
         >
           <div className="text-center">
             <motion.div
-              className="font-display text-5xl sm:text-7xl"
-              style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 1' }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              className="grid place-items-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7 }}
             >
-              A<span className="font-italic" style={{ color: "var(--accent)" }}>·</span>R
+              <span
+                className="spin-slow inline-grid place-items-center h-20 w-20 rounded-full border"
+                style={{ borderColor: "var(--line-strong)" }}
+              >
+                <span
+                  className="star"
+                  style={{
+                    width: 44,
+                    height: 44,
+                    color: "var(--accent)",
+                    filter: "drop-shadow(0 0 10px color-mix(in oklab, var(--accent), transparent 55%))",
+                  }}
+                />
+              </span>
             </motion.div>
             <motion.div
               className="mono text-[10px] uppercase tracking-[0.3em] opacity-70 mt-4"

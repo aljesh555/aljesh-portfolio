@@ -34,25 +34,49 @@ export default function Nav() {
             borderBottom: scrolled ? "1px solid var(--line)" : "1px solid transparent",
           }}
         >
-          <a href="#hero" className="group flex items-center gap-4" data-cursor="hover">
+          <a href="#hero" className="group flex items-center gap-3 sm:gap-4" data-cursor="hover">
             <span
-              className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-[var(--line-strong)] mono text-[13px] tracking-[0.16em]"
-              style={{ background: "var(--bg-2)" }}
+              className="relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center overflow-hidden rounded-full border border-[var(--line-strong)]"
+              style={{
+                background:
+                  "radial-gradient(70% 70% at 50% 50%, color-mix(in oklab, var(--accent), transparent 78%), var(--bg-2))",
+              }}
             >
-              <span className="spin-slow absolute inset-0 grid place-items-center">
-                <span className="star" style={{ width: 22, height: 22, color: "var(--accent)" }} />
-              </span>
-              <span className="relative font-semibold">{PROFILE.initials}</span>
-            </span>
-            <span className="hidden sm:flex flex-col leading-tight">
+              {/* Outer thin ring */}
               <span
-                className="font-display text-[20px]"
-                style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 1' }}
-              >
-                Aljesh Raut
+                className="absolute inset-1 rounded-full border"
+                style={{ borderColor: "color-mix(in oklab, var(--accent), transparent 70%)" }}
+                aria-hidden
+              />
+              {/* Slow spinning star */}
+              <span className="spin-slow absolute inset-0 grid place-items-center">
+                <span
+                  className="star"
+                  style={{
+                    width: 28,
+                    height: 28,
+                    color: "var(--accent)",
+                    filter: "drop-shadow(0 0 6px color-mix(in oklab, var(--accent), transparent 60%))",
+                  }}
+                />
               </span>
-              <span className="mono text-[9px] tracking-[0.22em] uppercase opacity-70">
-                Software Atelier · Local → Global
+              {/* Tiny accent dot for polish */}
+              <span
+                className="absolute h-1 w-1 rounded-full top-1.5 right-2"
+                style={{ background: "var(--accent)" }}
+                aria-hidden
+              />
+              <span className="sr-only">Aljesh Raut — Atelier of Code</span>
+            </span>
+            <span className="hidden sm:flex flex-col leading-[1.05]">
+              <span
+                className="font-display text-[19px]"
+                style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 1', letterSpacing: "-0.02em" }}
+              >
+                Aljesh <span className="font-italic" style={{ color: "var(--accent)" }}>Raut</span>
+              </span>
+              <span className="mono text-[9px] tracking-[0.24em] uppercase opacity-65 mt-1">
+                Software Atelier <span className="opacity-50">·</span> Local <span className="opacity-50">→</span> Global
               </span>
             </span>
           </a>

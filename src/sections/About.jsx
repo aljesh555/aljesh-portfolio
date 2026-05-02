@@ -31,7 +31,7 @@ export default function About() {
             <motion.div style={{ y: portraitY, scale: portraitScale }} className="absolute inset-0">
               <img
                 src="/portrait.jpg"
-                alt="Aljesh Raut, photographed in Bharatpur"
+                alt="Aljesh Raut, photographed in Kathmandu"
                 className="h-full w-full object-cover duotone"
                 loading="lazy"
               />
@@ -40,11 +40,11 @@ export default function About() {
               }} />
             </motion.div>
             <div className="absolute top-3 left-3 chip" style={{ background: "color-mix(in oklab, #000, transparent 40%)", color: "#fff", borderColor: "rgba(255,255,255,0.3)" }}>
-              <span className="star" style={{ width: 10, height: 10, color: "var(--color-ochre)" }} /> Bharatpur · MMXXIV
+              <span className="star" style={{ width: 10, height: 10, color: "var(--color-ochre)" }} /> Kathmandu · MMXXVI
             </div>
             <div className="absolute bottom-3 left-3 right-3 flex items-baseline justify-between mono text-[10px] uppercase tracking-[0.2em] text-white/90">
               <span>Pl. 01</span>
-              <span>fig — solo practice</span>
+              <span>fig — freelance & team</span>
             </div>
           </div>
 
@@ -61,32 +61,74 @@ export default function About() {
         {/* Bio */}
         <div className="col-span-12 md:col-span-7 lg:col-span-7 lg:col-start-6">
           <FadeUp>
-            <p className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.05]" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 0' }}>
-              I'm <span className="font-italic" style={{ color: "var(--accent)" }}>Aljesh Raut</span> — currently completing a B.Sc. in Computer Science at <span className="font-italic">Tribhuvan University</span>, and running an independent software practice from Bharatpur, Nepal.
+            <p
+              className="font-display text-[clamp(1.65rem,3.6vw,3rem)] leading-[1.08] tracking-[-0.025em]"
+              style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 0' }}
+            >
+              I'm{" "}
+              <span
+                className="font-italic"
+                style={{
+                  color: "var(--accent)",
+                  fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 1',
+                }}
+              >
+                Aljesh Raut
+              </span>{" "}
+              — a{" "}
+              <span style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 1' }}>
+                full-stack developer
+              </span>{" "}
+              <span className="opacity-60">&amp;</span>{" "}
+              <span className="font-italic">digital craftsman</span> from{" "}
+              <span style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 1' }}>
+                Kathmandu, Nepal
+              </span>
+              . I ship{" "}
+              <span className="font-italic" style={{ color: "var(--accent)" }}>
+                production web products
+              </span>{" "}
+              for founders and growing teams —{" "}
+              <span className="opacity-70">locally and globally.</span>
             </p>
           </FadeUp>
 
           <FadeUp delay={0.08}>
             <p className="mt-8 max-w-2xl text-[15px] sm:text-base leading-[1.6] text-[var(--fg-soft)]">
-              I work alone, on purpose. The products that shaped my taste — the editor I write in, the database my apps depend on, the deployment platform I ship to — were each, for a long time, the work of one or two people who could hold the whole machine in their head. I'm trying to do work in that lineage.
+              I run a freelance practice <span className="text-[var(--fg)]">and</span> work with a US-registered digital studio — <a href="https://bitmicrosys.com" target="_blank" rel="noopener noreferrer" className="text-[var(--fg)] link-underline">Bitmicrosys LLC</a> — handling SEO, AEO, GEO, technical blog writing and growth-side engineering for international clients. So you get a freelancer's velocity with a studio's discipline behind it.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.14}>
             <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.6] text-[var(--fg-soft)]">
-              Most of my recent work runs on <span className="text-[var(--fg)]">Cloudflare</span> — Pages, Workers, D1, R2, KV — because deploying to the edge in 2026 is no longer a flex; it's just hygiene. I pair that with React, TypeScript, and a quiet obsession with motion design.
+              The practice is young — founded in <span className="text-[var(--fg)]">2026</span> — but the shipping list isn't. <span className="text-[var(--fg)]">10+ projects deployed and live</span>: cafe and restaurant sites, an e-commerce wholesale portal, a coach-and-athlete training platform, and brand sites for hospitality and retail. I move fast, learn faster, and finish what I start.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.2}>
+            <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.6] text-[var(--fg-soft)]">
+              I'm equally comfortable <span className="text-[var(--fg)]">leading a project end-to-end</span> as I am <span className="text-[var(--fg)]">embedding into your team</span> as the dev who actually ships. My current studio engagement runs that way — async, accountable, weekly demos. I'm not a lone-wolf; I just believe a small accountable team beats a big committee, every time.
+            </p>
+          </FadeUp>
+
+          <FadeUp delay={0.26}>
+            <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.6] text-[var(--fg-soft)]">
+              Stack is <span className="text-[var(--fg)]">React, TypeScript, Cloudflare</span> (Pages, Workers, D1, R2, KV) — paired with motion design that earns its keep, and SEO/AEO/GEO baked in from the first commit, not bolted on later. If you want a developer who treats <span className="font-italic">discoverability</span> and <span className="font-italic">performance</span> as part of the build — not a phase 2 — we'll get along.
+          </p>
+          </FadeUp>
+
+          <FadeUp delay={0.32}>
             <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl">
               {[
-                ["Lives in", "Bharatpur, NP"],
+                ["Lives in", "Kathmandu, NP"],
+                ["Studies", "BCA · TU"],
+                ["Working with", "Bitmicrosys LLC (US)"],
                 ["Reads in", "EN · NE · HI"],
                 ["Ships from", "UTC+5:45"],
                 ["Stack", "TS · React · CF"],
-                ["Practice", "Solo, since 2022"],
-                ["Status", "Open · Apr→Jun"],
+                ["Practice", "Founded 2026"],
+                ["Engages as", "Freelance or embed"],
+                ["Status", "Open · 24/7"],
               ].map(([k, v]) => (
                 <div key={k} className="border border-[var(--line)] rounded-md p-3">
                   <div className="mono text-[9px] tracking-[0.2em] uppercase opacity-60">{k}</div>
