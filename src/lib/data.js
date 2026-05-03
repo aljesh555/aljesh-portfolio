@@ -194,16 +194,6 @@ export const WORK = [
     summary: "The art of braiding — salon brand site with services, hair-care guide, gallery, testimonials and online appointment booking.",
     stack: ["React", "Tailwind", "Cloudflare Pages"],
   },
-  {
-    num: "08",
-    client: "1kReach",
-    type: "Content · SEO · Blog",
-    year: "2026",
-    url: "https://1kreach.com/",
-    image: "",
-    summary: "Where I publish original SEO, AEO & GEO writing — long-form blogs, technical guides and growth content. Live editorial output, not theory.",
-    stack: ["SEO", "AEO", "GEO", "Content"],
-  },
 ];
 
 export const STATS = [
@@ -240,7 +230,7 @@ export const FAQS = [
   },
   {
     q: "Do you work solo, or with a team?",
-    a: "Both. I run an independent freelance practice in Kathmandu and partner with Bitmicrosys LLC (US) on growth engineering, SEO, AEO and GEO. For most product builds I lead end-to-end as the responsible developer; for bigger scopes I bring in trusted designers and a copywriter from the studio bench. You get a single point of accountability either way.",
+    a: "Both. I freelance independently and as part of Bitmicrosys LLC — taking on engineering work for international clients. SEO, AEO, GEO and original blog writing are my own craft, published live at 1kReach.com. For most product builds I lead end-to-end as the responsible developer; for bigger scopes I bring in trusted designers and a copywriter from the bench. You get a single point of accountability either way.",
   },
   {
     q: "Where are you based, and what hours?",

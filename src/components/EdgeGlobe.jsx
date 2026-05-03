@@ -916,6 +916,7 @@ function GlobeGroup({ visitor, pointer }) {
         <GlobeBase />
         <CountryBorders />
         <LandDots />
+        <HexGrid />
         <CloudLayer />
         <CityDots excludeCodes={exclude} />
         <CityRipples />
