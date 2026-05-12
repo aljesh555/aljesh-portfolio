@@ -8,7 +8,6 @@ export const PROFILE = {
   email: "rautaljesh@gmail.com",
   phone: "9819963606",
   whatsapp: "9779819963606",
-  schedule: "https://cal.com/aljesh",
   github: "https://github.com/aljeshraut",
 };
 

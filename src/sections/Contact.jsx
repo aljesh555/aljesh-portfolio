@@ -105,10 +105,10 @@ export default function Contact() {
             <ChannelCard
               icon={<CalendarClock size={18} />}
               label="Book a Call"
-              sub="30 min · video"
-              value="Pick a time →"
+              sub="30 min · WhatsApp video"
+              value="Request a slot →"
               hint="Discovery · free · no pitch"
-              href={PROFILE.schedule}
+              href={`https://wa.me/${PROFILE.whatsapp}?text=${encodeURIComponent("Hi Anis, I'd like to book a 30-min discovery call.")}`}
               primary
             />
           </div>
