@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { EDGES, HOME, findEdgeByCode, findNearestEdge } from "./edges";
+import { HOME, findEdgeByCode } from "./edges";
 
 function parseTrace(text) {
   const out = {};
@@ -23,7 +23,9 @@ export default function useEdgeVisitor() {
     let cancelled = false;
 
     async function detect() {
-      // 1. Cloudflare trace (works on Cloudflare Pages / Workers)
+      // Cloudflare trace — works on Cloudflare Pages / Workers (production).
+      // Off-platform (local dev, other hosts) falls through to HOME without
+      // calling any third-party geolocation service.
       try {
         const t0 = performance.now();
         const res = await fetch("/cdn-cgi/trace", { cache: "no-store" });
@@ -44,30 +46,9 @@ export default function useEdgeVisitor() {
         }
       } catch { /* trace unavailable */ }
 
-      // 2. ipapi.co fallback (CORS-enabled, free tier)
-      try {
-        const t0 = performance.now();
-        const res = await fetch("https://ipapi.co/json/");
-        const ms = Math.round(performance.now() - t0);
-        const data = await res.json();
-        if (cancelled) return;
-        const edge = findNearestEdge(data.latitude, data.longitude);
-        if (edge) {
-          setState({
-            visitor: edge,
-            latency: ms,
-            source: "ipapi",
-            country: data.country_code || null,
-            loading: false,
-          });
-          return;
-        }
-      } catch { /* geolocation unavailable */ }
-
-      // 3. Final fallback: pick a sensible default so UI is never empty
       if (cancelled) return;
       setState({
-        visitor: EDGES.find((e) => e.code === "SIN") || HOME,
+        visitor: HOME,
         latency: null,
         source: "fallback",
         country: null,

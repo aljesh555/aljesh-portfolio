@@ -29,7 +29,7 @@ export default function Work() {
             </Mask>
           </h2>
           <p className="mt-4 max-w-xl text-[14px] leading-[1.55] text-[var(--fg-soft)]">
-            Each card opens the deployed site in a new tab. A short selection from {WORK.length}+ shipped products.
+            Each card opens the deployed site in a new tab. A short selection of {WORK.length} from 12+ shipped products.
           </p>
         </div>
       </div>
@@ -74,6 +74,7 @@ function WorkCard({ item, cover, index }) {
                 src={item.image}
                 alt={`${item.client} — ${item.type}`}
                 loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
             ) : (

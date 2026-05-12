@@ -8,7 +8,7 @@ const H = parseInt(process.env.H || "1000", 10);
 const DARK = process.env.DARK !== "0";
 
 const browser = await puppeteer.launch({
-  headless: "new",
+  headless: true,
   args: [
     "--enable-webgl",
     "--use-gl=angle",

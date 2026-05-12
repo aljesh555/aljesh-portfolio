@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV, PROFILE } from "../lib/data";
 import ThemeToggle from "./ThemeToggle";
@@ -6,6 +6,7 @@ import ThemeToggle from "./ThemeToggle";
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const openButtonRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -15,7 +16,19 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    const lenis = window.__lenis;
+    if (open) {
+      lenis?.stop?.();
+      document.body.style.overflow = "hidden";
+      const onKey = (e) => {
+        if (e.key === "Escape") setOpen(false);
+      };
+      document.addEventListener("keydown", onKey);
+      return () => document.removeEventListener("keydown", onKey);
+    }
+    lenis?.start?.();
+    document.body.style.overflow = "";
+    openButtonRef.current?.focus();
   }, [open]);
 
   return (
@@ -101,9 +114,12 @@ export default function Nav() {
               Commission →
             </a>
             <button
+              ref={openButtonRef}
               className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line-strong)]"
               onClick={() => setOpen(true)}
               aria-label="Open menu"
+              aria-expanded={open}
+              aria-controls="mobile-nav"
             >
               <span className="block h-px w-4 bg-current relative before:absolute before:left-0 before:-top-1.5 before:h-px before:w-4 before:bg-current after:absolute after:left-0 after:top-1.5 after:h-px after:w-4 after:bg-current"></span>
             </button>
@@ -114,6 +130,10 @@ export default function Nav() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-nav"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site navigation"
             initial={{ y: "-100%" }}
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}

@@ -17,6 +17,9 @@ function Loader({ done }) {
     <AnimatePresence>
       {!done && (
         <motion.div
+          role="status"
+          aria-live="polite"
+          aria-label="Loading site"
           className="fixed inset-0 z-[120] grid place-items-center"
           style={{ background: "var(--bg)" }}
           initial={{ y: 0 }}

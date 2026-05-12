@@ -5,7 +5,7 @@ import { ArrowRight, Globe } from "lucide-react";
 
 // A small curated set of globally-distributed edges for the rotating demo.
 // We exclude HOME (Kathmandu) so the rotation always shows somewhere different.
-const SHOWCASE_CODES = ["NRT", "ICN", "SIN", "DXB", "FRA", "LHR", "CDG", "JFK", "LAX", "SYD", "GRU"];
+const SHOWCASE_CODES = ["NRT", "ICN", "SIN", "DXB", "FRA", "LHR", "CDG", "EWR", "LAX", "SYD", "GRU"];
 
 export default function EdgeReadout({ visitor, latency, source, loading }) {
   const [time, setTime] = useState("");

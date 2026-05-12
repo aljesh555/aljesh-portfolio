@@ -34,6 +34,7 @@ export default function About() {
                 alt="Anis Raut (Aljesh), photographed in Kathmandu"
                 className="h-full w-full object-cover duotone"
                 loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0" style={{
                 background: "linear-gradient(to top, color-mix(in oklab, var(--bg), transparent 30%) 0%, transparent 35%)"

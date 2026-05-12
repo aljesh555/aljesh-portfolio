@@ -1,4 +1,4 @@
-# Atelier of Code — Aljesh Raut · Portfolio
+# Atelier of Code — Anis Raut (Aljesh) · Portfolio
 
 Premium, motion-rich single-page portfolio for an independent software craftsman.
 
@@ -8,8 +8,7 @@ Premium, motion-rich single-page portfolio for an independent software craftsman
 - Tailwind v4 (`@tailwindcss/vite`)
 - Framer Motion (scroll-driven animation, magnetic CTAs, route transitions)
 - Lenis (Apple-grade smooth scroll)
-- React Three Fiber + drei (liquid 3D hero)
-- GSAP (utility, ready to extend with ScrollTrigger)
+- React Three Fiber + drei + postprocessing (3D edge globe in the hero)
 - Lucide icons
 
 ## Develop

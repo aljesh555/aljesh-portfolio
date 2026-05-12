@@ -1,7 +1,8 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import * as THREE from "three";
+import { useReducedMotion } from "framer-motion";
+import { AdditiveBlending, BackSide, Color, QuadraticBezierCurve3, Vector3 } from "three";
 import { EDGES, HOME } from "../lib/edges";
 import { getLandDotPositions } from "../lib/landDots";
 import { getCountryBorderSegments } from "../lib/borders";
@@ -11,7 +12,7 @@ const RADIUS = 1.55;
 function latLonToVec3(lat, lon, r = RADIUS) {
   const phi = ((90 - lat) * Math.PI) / 180;
   const theta = ((lon + 180) * Math.PI) / 180;
-  return new THREE.Vector3(
+  return new Vector3(
     -r * Math.sin(phi) * Math.cos(theta),
     r * Math.cos(phi),
     r * Math.sin(phi) * Math.sin(theta)
@@ -130,7 +131,7 @@ function CloudLayer({ visible = true }) {
   const uniforms = useMemo(
     () => ({
       uTime: { value: 0 },
-      uColor: { value: new THREE.Color("#FBE9C9") },
+      uColor: { value: new Color("#FBE9C9") },
     }),
     []
   );
@@ -141,7 +142,7 @@ function CloudLayer({ visible = true }) {
   if (!visible) return null;
   return (
     <mesh ref={meshRef}>
-      <sphereGeometry args={[RADIUS * 1.022, 96, 96]} />
+      <sphereGeometry args={[RADIUS * 1.022, 64, 64]} />
       <shaderMaterial
         ref={matRef}
         vertexShader={CLOUD_VERTEX}
@@ -149,7 +150,7 @@ function CloudLayer({ visible = true }) {
         uniforms={uniforms}
         transparent
         depthWrite={false}
-        blending={THREE.AdditiveBlending}
+        blending={AdditiveBlending}
       />
     </mesh>
   );
@@ -185,7 +186,7 @@ function CountryBorders() {
         color="#D4B070"
         transparent
         opacity={0}
-        blending={THREE.AdditiveBlending}
+        blending={AdditiveBlending}
         depthWrite={false}
       />
     </lineSegments>
@@ -267,7 +268,7 @@ function CityDots({ excludeCodes }) {
         transparent
         opacity={1.0}
         depthWrite={false}
-        blending={THREE.AdditiveBlending}
+        blending={AdditiveBlending}
       />
     </points>
   );
@@ -309,7 +310,7 @@ function PulseCity({ city, color, ringColor, size = 0.05, faster = false }) {
           color={ringColor || color}
           transparent
           depthWrite={false}
-          blending={THREE.AdditiveBlending}
+          blending={AdditiveBlending}
           opacity={0.3}
         />
       </mesh>
@@ -320,7 +321,7 @@ function PulseCity({ city, color, ringColor, size = 0.05, faster = false }) {
           color={ringColor || color}
           transparent
           depthWrite={false}
-          blending={THREE.AdditiveBlending}
+          blending={AdditiveBlending}
         />
       </mesh>
       <mesh ref={innerRef}>
@@ -345,7 +346,7 @@ function VisitorArc({ from, to, color }) {
     const distance = start.distanceTo(end);
     const mid = start.clone().add(end).multiplyScalar(0.5);
     mid.normalize().multiplyScalar(RADIUS + Math.min(distance * 0.46, 1.4));
-    return new THREE.QuadraticBezierCurve3(start, mid, end);
+    return new QuadraticBezierCurve3(start, mid, end);
   }, [from, to]);
 
   useEffect(() => {
@@ -383,7 +384,7 @@ function VisitorArc({ from, to, color }) {
           color={color}
           transparent
           opacity={0}
-          blending={THREE.AdditiveBlending}
+          blending={AdditiveBlending}
           depthWrite={false}
         />
       </mesh>
@@ -409,7 +410,7 @@ function AmbientArc({ from, to, color, delay, period }) {
     const distance = start.distanceTo(end);
     const mid = start.clone().add(end).multiplyScalar(0.5);
     mid.normalize().multiplyScalar(RADIUS + Math.min(distance * 0.4, 1.2));
-    return new THREE.QuadraticBezierCurve3(start, mid, end);
+    return new QuadraticBezierCurve3(start, mid, end);
   }, [from, to]);
 
   useFrame(({ clock }) => {
@@ -435,7 +436,7 @@ function AmbientArc({ from, to, color, delay, period }) {
           color={color}
           transparent
           opacity={0}
-          blending={THREE.AdditiveBlending}
+          blending={AdditiveBlending}
           depthWrite={false}
         />
       </mesh>
@@ -506,7 +507,7 @@ function CityRipple({ city, color, period, delay }) {
         color={color}
         transparent
         opacity={0}
-        blending={THREE.AdditiveBlending}
+        blending={AdditiveBlending}
         depthWrite={false}
       />
     </mesh>
@@ -548,7 +549,7 @@ function CityRipples() {
 function PolarAurora({ lat, color }) {
   const ref = useRef(null);
   const positions = useMemo(() => {
-    const N = 180;
+    const N = 120;
     const arr = new Float32Array(N * 3);
     for (let i = 0; i < N; i++) {
       const lon = (i / N) * 360 - 180;
@@ -582,7 +583,7 @@ function PolarAurora({ lat, color }) {
         transparent
         opacity={0.95}
         depthWrite={false}
-        blending={THREE.AdditiveBlending}
+        blending={AdditiveBlending}
       />
     </points>
   );
@@ -625,7 +626,7 @@ function RadarSweep() {
               color="#FFEDC8"
               transparent
               opacity={ghostOpacities[i] * 0.55}
-              blending={THREE.AdditiveBlending}
+              blending={AdditiveBlending}
               depthWrite={false}
             />
           </line>
@@ -640,8 +641,8 @@ function RadarSweep() {
 ============================================================ */
 function Stars() {
   const positions = useMemo(() => {
-    const arr = new Float32Array(900 * 3);
-    for (let i = 0; i < 900; i++) {
+    const arr = new Float32Array(500 * 3);
+    for (let i = 0; i < 500; i++) {
       const r = 7 + Math.random() * 11; // eslint-disable-line react-hooks/purity
       const theta = Math.random() * Math.PI * 2; // eslint-disable-line react-hooks/purity
       const phi = Math.acos(2 * Math.random() - 1); // eslint-disable-line react-hooks/purity
@@ -704,8 +705,8 @@ function AtmosphereGlow() {
       <shaderMaterial
         vertexShader={ATM_VERT}
         fragmentShader={ATM_FRAG}
-        side={THREE.BackSide}
-        blending={THREE.AdditiveBlending}
+        side={BackSide}
+        blending={AdditiveBlending}
         transparent
         depthWrite={false}
       />
@@ -779,7 +780,7 @@ function HexGrid() {
   });
   return (
     <mesh>
-      <sphereGeometry args={[RADIUS * 1.004, 128, 128]} />
+      <sphereGeometry args={[RADIUS * 1.004, 96, 96]} />
       <shaderMaterial
         ref={matRef}
         vertexShader={HEX_VERT}
@@ -787,7 +788,7 @@ function HexGrid() {
         uniforms={uniforms}
         transparent
         depthWrite={false}
-        blending={THREE.AdditiveBlending}
+        blending={AdditiveBlending}
       />
     </mesh>
   );
@@ -811,7 +812,7 @@ function OrbitalRing({ inclination = 0, speed = 0.18, color = "#00E8FF", nodeCou
       {/* Ring torus */}
       <mesh>
         <torusGeometry args={[R, 0.003, 8, 200]} />
-        <meshBasicMaterial color={color} transparent opacity={0.4} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <meshBasicMaterial color={color} transparent opacity={0.4} blending={AdditiveBlending} depthWrite={false} />
       </mesh>
       {/* Nodes */}
       <group ref={groupRef}>
@@ -820,12 +821,12 @@ function OrbitalRing({ inclination = 0, speed = 0.18, color = "#00E8FF", nodeCou
             {/* Node sphere */}
             <mesh position={[Math.cos(angle) * R, 0, Math.sin(angle) * R]}>
               <sphereGeometry args={[0.022, 8, 8]} />
-              <meshBasicMaterial color={color} blending={THREE.AdditiveBlending} depthWrite={false} />
+              <meshBasicMaterial color={color} blending={AdditiveBlending} depthWrite={false} />
             </mesh>
             {/* Node halo */}
             <mesh position={[Math.cos(angle) * R, 0, Math.sin(angle) * R]}>
               <sphereGeometry args={[0.048, 8, 8]} />
-              <meshBasicMaterial color={color} transparent opacity={0.18} blending={THREE.AdditiveBlending} depthWrite={false} />
+              <meshBasicMaterial color={color} transparent opacity={0.18} blending={AdditiveBlending} depthWrite={false} />
             </mesh>
           </group>
         ))}
@@ -851,12 +852,12 @@ function ScanRing() {
     <group ref={groupRef}>
       <mesh>
         <torusGeometry args={[RADIUS, 0.004, 8, 160]} />
-        <meshBasicMaterial color="#FF6A2A" transparent opacity={0.7} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <meshBasicMaterial color="#FF6A2A" transparent opacity={0.7} blending={AdditiveBlending} depthWrite={false} />
       </mesh>
       {/* Inner glow ring */}
       <mesh>
         <torusGeometry args={[RADIUS, 0.012, 8, 160]} />
-        <meshBasicMaterial color="#FF8840" transparent opacity={0.18} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <meshBasicMaterial color="#FF8840" transparent opacity={0.18} blending={AdditiveBlending} depthWrite={false} />
       </mesh>
     </group>
   );
@@ -878,7 +879,7 @@ function OrbitingSun() {
 /* ============================================================
    Main rotating Earth group.
 ============================================================ */
-function GlobeGroup({ visitor, pointer }) {
+function GlobeGroup({ visitor, pointer, reducedMotion }) {
   const ref = useRef(null);
   const tilt = 23.5 * (Math.PI / 180);
 
@@ -894,7 +895,8 @@ function GlobeGroup({ visitor, pointer }) {
     const t = clock.getElapsedTime();
     const px = pointer?.current?.x ?? 0;
     const py = pointer?.current?.y ?? 0;
-    ref.current.rotation.y = initialRotation[1] + t * 0.05 + px * 0.5;
+    const spin = reducedMotion ? 0 : t * 0.05;
+    ref.current.rotation.y = initialRotation[1] + spin + px * 0.5;
     ref.current.rotation.x = initialRotation[0] + py * 0.2;
   });
 
@@ -909,21 +911,25 @@ function GlobeGroup({ visitor, pointer }) {
       {/* Atmosphere sits outside the rotating group */}
       <AtmosphereGlow />
       {/* Orbital system — counter-rotates slightly against globe */}
-      <OrbitalRing inclination={0}                    speed={0.14}  color="#00E8FF" nodeCount={4} radius={1.44} />
-      <OrbitalRing inclination={Math.PI * 0.38}       speed={-0.10} color="#FF6A2A" nodeCount={3} radius={1.50} />
-      <OrbitalRing inclination={Math.PI * 0.62}       speed={0.08}  color="#C0F5E0" nodeCount={5} radius={1.38} />
+      {!reducedMotion && (
+        <>
+          <OrbitalRing inclination={0}                    speed={0.14}  color="#00E8FF" nodeCount={4} radius={1.44} />
+          <OrbitalRing inclination={Math.PI * 0.38}       speed={-0.10} color="#FF6A2A" nodeCount={3} radius={1.50} />
+          <OrbitalRing inclination={Math.PI * 0.62}       speed={0.08}  color="#C0F5E0" nodeCount={5} radius={1.38} />
+        </>
+      )}
       <group ref={ref}>
         <GlobeBase />
         <CountryBorders />
         <LandDots />
-        <HexGrid />
-        <CloudLayer />
+        {!reducedMotion && <HexGrid />}
+        {!reducedMotion && <CloudLayer />}
         <CityDots excludeCodes={exclude} />
-        <CityRipples />
-        <PolarAurora lat={78} color="#C0F5E0" />
-        <PolarAurora lat={-78} color="#FFC9DD" />
-        <AmbientArcs />
-        <ScanRing />
+        {!reducedMotion && <CityRipples />}
+        {!reducedMotion && <PolarAurora lat={78} color="#C0F5E0" />}
+        {!reducedMotion && <PolarAurora lat={-78} color="#FFC9DD" />}
+        {!reducedMotion && <AmbientArcs />}
+        {!reducedMotion && <ScanRing />}
         <PulseCity city={HOME} color="#FFE0A6" ringColor="#C8A85C" size={0.062} />
         {visitor && visitor.code !== HOME.code && (
           <>
@@ -932,7 +938,7 @@ function GlobeGroup({ visitor, pointer }) {
           </>
         )}
       </group>
-      <RadarSweep />
+      {!reducedMotion && <RadarSweep />}
     </group>
   );
 }
@@ -1057,6 +1063,8 @@ export default function EdgeGlobe({ visitor }) {
   const pointer = useRef({ x: 0, y: 0 });
   const wrap = useRef(null);
   const [webglOk] = useState(() => checkWebGL());
+  const [inView, setInView] = useState(true);
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
     const onMove = (e) => {
@@ -1071,14 +1079,25 @@ export default function EdgeGlobe({ visitor }) {
     return () => window.removeEventListener("mousemove", onMove);
   }, []);
 
+  useEffect(() => {
+    if (!wrap.current) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    io.observe(wrap.current);
+    return () => io.disconnect();
+  }, []);
+
   if (!webglOk) return <GlobeFallback />;
 
   return (
     <div ref={wrap} className="absolute inset-0" aria-hidden>
       <Canvas
-        dpr={[1, 2]}
+        dpr={[1, 1.6]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         camera={{ position: [0, 0, 4.4], fov: 38 }}
+        frameloop={inView ? "always" : "never"}
       >
         <ambientLight intensity={0.35} />
         <OrbitingSun />
@@ -1086,7 +1105,7 @@ export default function EdgeGlobe({ visitor }) {
         <pointLight position={[3, 3, 3]} intensity={0.6} color="#00E8FF" distance={8} />
         <Suspense fallback={null}>
           <Stars />
-          <GlobeGroup visitor={visitor} pointer={pointer} />
+          <GlobeGroup visitor={visitor} pointer={pointer} reducedMotion={!!reducedMotion} />
         </Suspense>
         <EffectComposer multisampling={0} disableNormalPass>
           <Bloom
