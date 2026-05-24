@@ -1,14 +1,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Magnetic from "../components/Magnetic";
-import { Mask, FadeUp } from "../components/Reveal";
+import { FadeUp } from "../components/Reveal";
 
 export default function Hero() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const titleY = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
   return (
     <section
@@ -52,35 +51,8 @@ export default function Hero() {
 
       {/* MAIN — centered horizontally + vertically */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
-        {/* TITLE */}
-        <motion.div style={{ y: titleY }} className="w-full">
-          <h1 className="font-display text-[16vw] sm:text-[11vw] md:text-[9.5vw] lg:text-[7vw] leading-[0.88]">
-            <Mask delay={0.0}>
-              <span style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 1' }}>
-                Atelier
-              </span>
-            </Mask>
-            <br />
-            <span className="flex items-baseline justify-center gap-[0.18em] flex-wrap">
-              <Mask delay={0.1}>
-                <span className="font-italic">of</span>
-              </Mask>
-              <Mask delay={0.18}>
-                <span
-                  style={{
-                    fontVariationSettings: '"opsz" 144, "SOFT" 0, "WONK" 0',
-                    color: "var(--accent)",
-                  }}
-                >
-                  Code.
-                </span>
-              </Mask>
-            </span>
-          </h1>
-        </motion.div>
-
-        {/* BIO — centered, comfortable measure */}
-        <FadeUp delay={0.28} className="mt-10 sm:mt-12 lg:mt-14 max-w-2xl mx-auto">
+        {/* BIO */}
+        <FadeUp delay={0.28} className="max-w-2xl mx-auto">
           <p className="text-[15px] sm:text-base lg:text-[17px] leading-[1.7] text-[var(--fg-soft)]">
             <span className="text-[var(--fg)]">Anis Raut</span>{" "}
             <span className="opacity-55">(Aljesh)</span> — independent
@@ -111,7 +83,7 @@ export default function Hero() {
         </FadeUp>
 
         {/* CTAs */}
-        <FadeUp delay={0.4} className="mt-9 sm:mt-10">
+        <FadeUp delay={0.4} className="mt-5 sm:mt-6">
           <div className="flex flex-wrap justify-center gap-3">
             <Magnetic strength={0.25}>
               <a href="#contact" className="btn-magnet" data-cursor="hover">
