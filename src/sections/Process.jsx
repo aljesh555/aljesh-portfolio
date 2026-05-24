@@ -12,12 +12,12 @@ export default function Process() {
         </div>
         <div className="col-span-12 md:col-span-9">
           <h2 className="font-display text-[10vw] sm:text-[7vw] md:text-[5.4vw] leading-[0.95]">
-            <Mask><span style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 1' }}>Five movements,</span></Mask>
+            <Mask><span style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 1' }}>How an</span></Mask>
             <br />
-            <Mask delay={0.08}><span className="font-italic">one composition.</span></Mask>
+            <Mask delay={0.08}><span className="font-italic">engagement runs.</span></Mask>
           </h2>
           <FadeUp delay={0.1} className="max-w-xl mt-6 text-[15px] leading-[1.55] text-[var(--fg-soft)]">
-            How I move from a half-formed idea to a product your customers can quote. Not a template — a tempo.
+            Five steps from the first call to handover.
           </FadeUp>
         </div>
       </div>

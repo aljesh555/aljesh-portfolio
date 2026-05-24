@@ -33,7 +33,7 @@ export const SERVICES = [
     title: "SaaS Platforms",
     tag: "Multi-tenant · Subscriptions",
     summary:
-      "End-to-end software-as-a-service products with multi-tenant architecture, subscription management, and scalable infrastructure.",
+      "Multi-tenant apps with subscriptions, role-based access, and an API that runs at the edge.",
     deliverables: ["Tenancy & RBAC", "Stripe billing", "Edge-deployed API", "Audit & analytics"],
     icon: "saas",
   },
@@ -42,7 +42,7 @@ export const SERVICES = [
     title: "Business Dashboards",
     tag: "Realtime · KPI",
     summary:
-      "Real-time analytics dashboards that transform raw data into actionable insights with interactive charts and KPI tracking.",
+      "Dashboards that pull from your real data sources and show the numbers you check every morning.",
     deliverables: ["Cohort & funnel views", "Streaming metrics", "Embedded BI", "Role-aware exports"],
     icon: "chart",
   },
@@ -51,7 +51,7 @@ export const SERVICES = [
     title: "Automation Systems",
     tag: "Workflows · Pipelines",
     summary:
-      "Workflow automation that eliminates repetitive tasks — from data pipelines and notifications to complete business process orchestration.",
+      "Scripts, pipelines and scheduled jobs that take work off someone's daily list.",
     deliverables: ["ETL & sync jobs", "Webhook routing", "Notification fabric", "Headless agents"],
     icon: "loop",
   },
@@ -60,7 +60,7 @@ export const SERVICES = [
     title: "E-commerce Platforms",
     tag: "Storefront · Checkout",
     summary:
-      "Custom storefronts with inventory management, payment processing, order tracking, and conversion-optimized checkout flows.",
+      "Storefronts with Stripe checkout, inventory and order tracking. Fast on mobile, fast on slow connections.",
     deliverables: ["Composable storefront", "Inventory & fulfilment", "Payments & tax", "Conversion lab"],
     icon: "bag",
   },
@@ -69,7 +69,7 @@ export const SERVICES = [
     title: "Client Web Applications",
     tag: "Brand · Interactive",
     summary:
-      "High-performance web applications designed to represent brands, engage users, and convert visitors into customers.",
+      "Brand sites and marketing pages. Heavy on typography, light on JavaScript.",
     deliverables: ["Design systems", "Motion craft", "CMS pipelines", "Lighthouse 95+"],
     icon: "globe",
   },
@@ -78,16 +78,16 @@ export const SERVICES = [
     title: "Admin Panels",
     tag: "RBAC · Audit",
     summary:
-      "Comprehensive content and user management systems with role-based access, audit logging, and intuitive workflows.",
+      "Internal tools for your team — CRUD, permissions, audit logs, bulk actions.",
     deliverables: ["Permission matrices", "Approval flows", "Activity timelines", "Bulk operations"],
     icon: "grid",
   },
   {
     num: "07",
     title: "API Systems",
-    tag: "REST · GraphQL · Edge",
+    tag: "REST · tRPC · Edge",
     summary:
-      "Resilient APIs designed at the edge — typed contracts, observable runtimes, and predictable performance under load.",
+      "REST and tRPC APIs on Cloudflare Workers. Typed end-to-end, deployed close to your users.",
     deliverables: ["OpenAPI / tRPC", "Rate-limit & queues", "Versioning strategy", "SDK generation"],
     icon: "node",
   },
@@ -97,27 +97,27 @@ export const PROCESS = [
   {
     num: "I",
     label: "Discovery",
-    body: "We map the territory — users, constraints, business shape — and pin down the one outcome that justifies the build.",
+    body: "A 30-minute call to figure out who uses it, what it has to do, and the thing that makes the project worth doing.",
   },
   {
     num: "II",
     label: "Architecture",
-    body: "Stack, data, edges. I write a one-page architecture brief so the next six weeks have no surprises.",
+    body: "I write a one-page brief covering the stack, data model, integrations and edges. We both sign off before any code is written.",
   },
   {
     num: "III",
     label: "Build",
-    body: "Daily commits to a staging URL. You see the product growing, not a Gantt chart pretending to.",
+    body: "Daily commits to a private staging URL. You can check progress whenever you want; I'll demo on Friday.",
   },
   {
     num: "IV",
     label: "Polish",
-    body: "Motion, microcopy, edge cases, performance. The 20% that turns a working app into a product people quote.",
+    body: "Motion, microcopy, edge cases, performance. The part that takes a working app and makes it feel finished.",
   },
   {
     num: "V",
     label: "Handover",
-    body: "Docs, runbooks, deploy keys, and one final session so your team owns it — not just inherits it.",
+    body: "Docs, runbooks, deploy keys, and a walkthrough call so your team can actually maintain it after I'm gone.",
   },
 ];
 

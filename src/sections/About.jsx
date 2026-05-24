@@ -78,47 +78,45 @@ export default function About() {
               </span>{" "}
               <span className="opacity-55 text-[0.55em] align-baseline tracking-[0.04em]">
                 (also known as Aljesh)
-              </span>{" "}
-              — a{" "}
+              </span>
+              , a{" "}
               <span style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 1' }}>
                 full-stack developer
               </span>{" "}
-              <span className="opacity-60">&amp;</span>{" "}
-              <span className="font-italic">digital craftsman</span> from{" "}
+              from{" "}
               <span style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 1' }}>
                 Kathmandu, Nepal
               </span>
-              . I ship{" "}
+              . I build{" "}
               <span className="font-italic" style={{ color: "var(--accent)" }}>
-                production web products
+                websites and web apps
               </span>{" "}
-              for founders and growing teams —{" "}
-              <span className="opacity-70">locally and globally.</span>
+              for founders and small teams.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.08}>
             <p className="mt-8 max-w-2xl text-[15px] sm:text-base leading-[1.65] text-[var(--fg-soft)] body-justify">
-              I freelance independently <span className="text-[var(--fg)]">and</span> as part of <a href="https://bitmicrosys.com" target="_blank" rel="noopener noreferrer" className="text-[var(--fg)] link-underline">Bitmicrosys LLC</a> — taking on engineering, SEO, AEO, GEO and technical-blog work for international clients. SEO, AEO, GEO and content writing are my own craft; I'm the person doing the keyword research, the schema markup and the long-form pieces, not handing it off. You can read the live output at <a href="https://1kreach.com" target="_blank" rel="noopener noreferrer" className="text-[var(--fg)] link-underline">1kReach.com</a> — original blogs, primarily SEO-driven, published on the open web.
+              I freelance independently and contract with <a href="https://bitmicrosys.com" target="_blank" rel="noopener noreferrer" className="text-[var(--fg)] link-underline">Bitmicrosys LLC</a> on engineering, SEO and technical-blog work for international clients. I do the SEO and writing myself — keyword research, schema markup, long-form posts. Live output at <a href="https://1kreach.com" target="_blank" rel="noopener noreferrer" className="text-[var(--fg)] link-underline">1kReach.com</a>.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.14}>
             <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.65] text-[var(--fg-soft)] body-justify">
-              I started freelancing in <span className="text-[var(--fg)]">2026</span> — only a few months in, but the shipping list isn't short. <span className="text-[var(--fg)]">12+ projects deployed and live</span>: cafe, bar and restaurant sites, premium gym, heritage dining, skincare brand, salon booking, plus the content/SEO work at 1kReach. I move fast, learn faster, and finish what I start.
+              I started freelancing in <span className="text-[var(--fg)]">2026</span>. A few months in and <span className="text-[var(--fg)]">12+ projects are deployed and live</span>: cafe, bar and restaurant sites, a premium gym, a heritage dining venue, a skincare brand, a salon booking site, plus the writing at 1kReach.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.2}>
             <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.65] text-[var(--fg-soft)] body-justify">
-              I'm equally comfortable <span className="text-[var(--fg)]">leading a project end-to-end</span> as I am <span className="text-[var(--fg)]">embedding into your team</span> as the dev who actually ships. The studio work runs that way — async, accountable, weekly demos. I'm not a lone-wolf; I just believe a small accountable team beats a big committee, every time.
+              I lead projects end-to-end and I embed into existing teams. Either way the engagement runs async, with weekly demos and a single thread for everything.
             </p>
           </FadeUp>
 
           <FadeUp delay={0.26}>
             <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.65] text-[var(--fg-soft)] body-justify">
-              Stack is <span className="text-[var(--fg)]">React, TypeScript, Cloudflare</span> (Pages, Workers, D1, R2, KV) — paired with motion design that earns its keep, and SEO baked in from the first commit, not bolted on later. If you want a developer who treats <span className="font-italic">discoverability</span> and <span className="font-italic">performance</span> as part of the build — not a phase 2 — we'll get along.
-          </p>
+              Stack is <span className="text-[var(--fg)]">React, TypeScript, Cloudflare</span> (Pages, Workers, D1, R2, KV). I write the SEO and schema myself — same work as writing the code, not a separate phase.
+            </p>
           </FadeUp>
 
           <FadeUp delay={0.32}>

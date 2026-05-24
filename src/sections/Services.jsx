@@ -23,7 +23,7 @@ export default function Services() {
             </Mask>
           </h2>
           <FadeUp delay={0.12} className="max-w-2xl mt-8 text-[15px] sm:text-base leading-[1.55] text-[var(--fg-soft)]">
-            A freelancer's promise: anything you can describe, I can ship — provided we both know <span className="font-italic" style={{ color: "var(--fg)" }}>why</span> it deserves to exist. The seven below are the disciplines I keep sharp.
+            I take on most kinds of web work. These are the seven I do most often.
           </FadeUp>
         </div>
       </div>

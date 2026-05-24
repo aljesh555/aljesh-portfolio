@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const TEXT = "Software, when it is good, feels less like an app and more like a well-tailored suit — fitted, considered, and quietly confident in any room you step into.";
+const TEXT = "Most of the value in a project hides in the last ten percent. Error messages, empty states, what happens when the network drops. That's the part users actually feel, and I spend disproportionate time there.";
 
 export default function Manifesto() {
   const ref = useRef(null);
@@ -19,7 +19,7 @@ export default function Manifesto() {
           <p className="font-display text-3xl sm:text-5xl lg:text-6xl leading-[1.04]" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30, "WONK" 0' }}>
             {words.map((w, i) => (
               <Word key={i} progress={scrollYProgress} start={i / words.length} end={i / words.length + 1.2 / words.length}>
-                {w === "suit" ? <span className="font-italic" style={{ color: "var(--accent)" }}>{w}</span> : w}
+                {w}
               </Word>
             ))}
           </p>
