@@ -193,6 +193,26 @@ export const WORK = [
     summary: "The art of braiding — salon brand site with services, hair-care guide, gallery, testimonials and online appointment booking.",
     stack: ["React", "Tailwind", "Cloudflare Pages"],
   },
+  {
+    num: "08",
+    client: "Fitness Durbar",
+    type: "Premium Fitness · Gym",
+    year: "2026",
+    url: "https://fitnessdurbar.com.np/",
+    image: "/work/fitnessdurbar.png",
+    summary: "Premium Hattiban gym — membership tiers, certified coaching, group classes (HIIT, boxing, Zumba, yoga) and a free intro session via WhatsApp.",
+    stack: ["React", "Tailwind", "Cloudflare Pages"],
+  },
+  {
+    num: "09",
+    client: "Shakti X Gym & Fitness",
+    type: "Strength & Conditioning · Gym",
+    year: "2026",
+    url: "https://shaktixgym.com.np/",
+    image: "/work/shaktixgym.png",
+    summary: "Results-driven Gongabu strength gym — programs, founder-coach profiles, transformation gallery, membership plans and free consultation booking.",
+    stack: ["React", "Tailwind", "Cloudflare Pages"],
+  },
 ];
 
 export const STATS = [
