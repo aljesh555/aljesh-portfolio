@@ -213,6 +213,26 @@ export const WORK = [
     summary: "Results-driven Gongabu strength gym — programs, founder-coach profiles, transformation gallery, membership plans and free consultation booking.",
     stack: ["React", "Tailwind", "Cloudflare Pages"],
   },
+  {
+    num: "10",
+    client: "Shey Dolpo Shilajit",
+    type: "Himalayan Resin · Brand & Shop",
+    year: "2026",
+    url: "https://shey-dolpo-shilajit.pages.dev/",
+    image: "/work/sheydolpo.png",
+    summary: "Editorial shilajit brand from the heights of Dolpo — origin story, hand-purification process, per-batch lab reports, benefits guide and shop with WhatsApp ordering.",
+    stack: ["React", "Tailwind", "Cloudflare Pages"],
+  },
+  {
+    num: "11",
+    client: "Crimson Academy",
+    type: "School · English Medium",
+    year: "2026",
+    url: "https://crimson-academy.pages.dev/",
+    image: "/work/crimsonacademy.png",
+    summary: "English-medium school site (est. 2063 B.S.) — academics, admissions, school life, news, gallery and an Apply Now enquiry flow, with light and dark modes.",
+    stack: ["React", "Tailwind", "Cloudflare Pages"],
+  },
 ];
 
 export const STATS = [
