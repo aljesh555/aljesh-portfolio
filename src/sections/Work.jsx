@@ -111,7 +111,7 @@ function WorkCard({ item, cover, index }) {
           </motion.div>
 
           <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 mono text-[9px] uppercase tracking-[0.18em] text-white/85">
-            <span className="px-1.5 py-0.5 rounded-full border border-white/40 backdrop-blur">/{item.num}</span>
+            <span className="px-1.5 py-0.5 rounded-full border border-white/40 backdrop-blur">/{String(index + 1).padStart(2, "0")}</span>
             <span className="px-1.5 py-0.5 rounded-full border border-white/40 backdrop-blur">{item.year}</span>
             <span className="px-1.5 py-0.5 rounded-full border border-white/40 backdrop-blur" style={{ background: "color-mix(in oklab, var(--accent), transparent 30%)" }}>Live</span>
           </div>

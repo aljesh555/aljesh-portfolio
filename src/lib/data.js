@@ -234,16 +234,6 @@ export const WORK = [
     stack: ["React", "Tailwind", "Cloudflare Pages"],
   },
   {
-    num: "12",
-    client: "Cold Call Cockpit",
-    type: "Sales CRM · SaaS Dashboard",
-    year: "2026",
-    url: "https://cold-call-cockpit.pages.dev/",
-    image: "/work/cold-call-cockpit.webp",
-    summary: "Lead-tracking cockpit for cold-call outreach — a daily call queue, hot-lead pipeline, follow-up reminders and activity logging in one fast dashboard.",
-    stack: ["React", "Tailwind", "Cloudflare Pages"],
-  },
-  {
     num: "13",
     client: "Style by Saamna",
     type: "Salon · Hair, Makeup & Bridal",
@@ -356,7 +346,7 @@ export const WORK = [
 ];
 
 export const STATS = [
-  { num: "23", label: "Projects shipped & live" },
+  { num: "22", label: "Projects shipped & live" },
   { num: "2026", label: "Freelancing since" },
   { num: "Solo / Team", label: "Open to either" },
   { num: "BCA · TU", label: "Bachelor in Computer Application" },
