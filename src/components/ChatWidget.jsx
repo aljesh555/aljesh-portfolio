@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { X, ArrowUp, ArrowRight, Check, Paperclip, Mic, Square, FileText } from "lucide-react";
+import { X, ArrowUp, ArrowRight, Check, Paperclip, Mic, MessageCircle, FileText } from "lucide-react";
 
 const GREETING =
   "Hello — I'm Aljesh's studio assistant. Ask about his work, services, or how to start a project. You can send photos, files, or a voice note too.";
@@ -252,8 +252,8 @@ export default function ChatWidget() {
                 <X size={22} strokeWidth={1.75} />
               </motion.span>
             ) : (
-              <motion.span key="star" initial={{ scale: 0.4, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.4, opacity: 0 }} transition={{ duration: 0.2 }}>
-                <span className="star" style={{ width: 24, height: 24, color: "var(--bg)", display: "block" }} />
+              <motion.span key="chat" initial={{ scale: 0.4, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.4, opacity: 0 }} transition={{ duration: 0.2 }}>
+                <MessageCircle size={24} strokeWidth={1.75} />
               </motion.span>
             )}
           </AnimatePresence>
