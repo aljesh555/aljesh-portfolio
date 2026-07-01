@@ -13,6 +13,6 @@ LEAD_NOTIFY_EMAIL = "rautaljesh@gmail.com"
 # paste the returned id:
 #   wrangler kv namespace create RATE_LIMIT
 # Until then, rate limiting is skipped (the endpoints still work).
-# [[kv_namespaces]]
-# binding = "RATE_LIMIT"
-# id = "REPLACE_WITH_KV_NAMESPACE_ID"
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "dc547a5cb7114a0a92a729cd6b13f5f1"
