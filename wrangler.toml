@@ -8,6 +8,7 @@ pages_build_output_dir = "dist"
 [vars]
 BREVO_SENDER_EMAIL = "rautaljesh@gmail.com"
 LEAD_NOTIFY_EMAIL = "rautaljesh@gmail.com"
+GEMINI_MODEL = "gemini-3.5-flash"
 
 # Rate-limit store for the chatbot. Create the namespace, then uncomment and
 # paste the returned id:

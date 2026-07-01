@@ -1,6 +1,10 @@
 import { buildSystemInstruction } from "../_lib/prompt.js";
 import { rateLimit } from "../_lib/ratelimit.js";
 
+const ALLOWED_MIME = /^(image\/(png|jpe?g|webp|gif|heic|heif)|application\/pdf|audio\/(webm|ogg|mp3|mpeg|wav|x-wav|aac|mp4|m4a|flac|aiff))$/i;
+const MAX_ATTACH_PER_MSG = 5;
+const MAX_B64_LEN = 6_000_000; // ~4.4 MB per attachment (base64)
+
 function json(obj, status = 200, headers = {}) {
   return new Response(JSON.stringify(obj), {
     status,
@@ -11,10 +15,9 @@ function json(obj, status = 200, headers = {}) {
 export async function onRequestPost({ request, env }) {
   const ip = request.headers.get("cf-connecting-ip") || "unknown";
 
-  // Throttle: short burst limit + a daily cap to protect the Gemini free quota.
   const burst = await rateLimit(env.RATE_LIMIT, { key: `chat:min:${ip}`, limit: 12, windowSeconds: 60 });
   if (!burst.ok) return json({ error: "rate_limited" }, 429, { "Retry-After": String(burst.retryAfter || 30) });
-  const daily = await rateLimit(env.RATE_LIMIT, { key: `chat:day:${ip}`, limit: 80, windowSeconds: 86400 });
+  const daily = await rateLimit(env.RATE_LIMIT, { key: `chat:day:${ip}`, limit: 120, windowSeconds: 86400 });
   if (!daily.ok) return json({ error: "daily_limit" }, 429);
 
   if (!env.GEMINI_API_KEY) return json({ error: "server_misconfigured" }, 500);
@@ -27,21 +30,32 @@ export async function onRequestPost({ request, env }) {
   }
 
   const history = Array.isArray(body?.messages) ? body.messages : [];
-  const contents = history
-    .filter((m) => m && typeof m.text === "string" && m.text.trim())
-    .slice(-14)
-    .map((m) => ({
-      role: m.role === "assistant" || m.role === "model" ? "model" : "user",
-      parts: [{ text: String(m.text).slice(0, 2000) }],
-    }));
+  const contents = [];
+  for (const m of history.slice(-14)) {
+    if (!m) continue;
+    const role = m.role === "assistant" || m.role === "model" ? "model" : "user";
+    const parts = [];
+    if (typeof m.text === "string" && m.text.trim()) parts.push({ text: m.text.slice(0, 2000) });
+    // Attachments (images / PDF / audio) only make sense on user turns.
+    if (role === "user" && Array.isArray(m.attachments)) {
+      for (const a of m.attachments.slice(0, MAX_ATTACH_PER_MSG)) {
+        if (
+          a && typeof a.mimeType === "string" && ALLOWED_MIME.test(a.mimeType) &&
+          typeof a.data === "string" && a.data.length > 0 && a.data.length <= MAX_B64_LEN
+        ) {
+          parts.push({ inline_data: { mime_type: a.mimeType, data: a.data } });
+        }
+      }
+    }
+    if (parts.length) contents.push({ role, parts });
+  }
 
-  // Gemini requires the conversation to start and end with a user turn.
   while (contents.length && contents[0].role !== "user") contents.shift();
   if (!contents.length || contents[contents.length - 1].role !== "user") {
     return json({ error: "empty" }, 400);
   }
 
-  const model = env.GEMINI_MODEL || "gemini-2.5-flash";
+  const model = env.GEMINI_MODEL || "gemini-3.5-flash";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${env.GEMINI_API_KEY}`;
 
   const payload = {
@@ -49,8 +63,7 @@ export async function onRequestPost({ request, env }) {
     contents,
     generationConfig: {
       temperature: 0.6,
-      maxOutputTokens: 700,
-      // Disable "thinking" for snappy, cheap FAQ-style replies.
+      maxOutputTokens: 900,
       thinkingConfig: { thinkingBudget: 0 },
     },
   };
@@ -71,7 +84,6 @@ export async function onRequestPost({ request, env }) {
     return json({ error: "upstream", detail: detail.slice(0, 300) }, 502);
   }
 
-  // Transform Gemini's SSE stream into a plain UTF-8 text stream for the browser.
   return new Response(toTextStream(upstream.body), {
     headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" },
   });
@@ -103,7 +115,7 @@ function toTextStream(readable) {
                 if (p?.text) controller.enqueue(encoder.encode(p.text));
               }
             } catch {
-              // partial JSON line spanning chunks — ignore, it'll complete next read
+              // partial JSON line spanning chunks — ignore
             }
           }
         }
