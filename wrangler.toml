@@ -1,3 +1,18 @@
 name = "aljesh-portfolio"
 compatibility_date = "2025-01-15"
 pages_build_output_dir = "dist"
+
+# Non-secret config for the chatbot's lead handler.
+# (Secrets — GEMINI_API_KEY, BREVO_API_KEY, SHEET_WEBHOOK_URL, SHEET_SECRET —
+#  are set with `wrangler pages secret put ...`, never here.)
+[vars]
+BREVO_SENDER_EMAIL = "rautaljesh@gmail.com"
+LEAD_NOTIFY_EMAIL = "rautaljesh@gmail.com"
+
+# Rate-limit store for the chatbot. Create the namespace, then uncomment and
+# paste the returned id:
+#   wrangler kv namespace create RATE_LIMIT
+# Until then, rate limiting is skipped (the endpoints still work).
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT"
+# id = "REPLACE_WITH_KV_NAMESPACE_ID"

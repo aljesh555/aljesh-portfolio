@@ -4,4 +4,6 @@ dist/
 *.log
 .env*
 !.env.example
+.dev.vars
+.wrangler/
 .claude/scheduled_tasks.lock

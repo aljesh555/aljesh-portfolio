@@ -11,6 +11,7 @@ import Work from "./sections/Work";
 import About from "./sections/About";
 import Faq from "./sections/Faq";
 import Contact from "./sections/Contact";
+import ChatWidget from "./components/ChatWidget";
 
 function Loader({ done }) {
   return (
@@ -94,6 +95,9 @@ export default function App() {
       <SmoothScroll />
       <Nav />
       <main>
+        <h1 className="sr-only">
+          Anis Raut (Aljesh) — Freelance Full-Stack Web Developer in Kathmandu, Nepal
+        </h1>
         <Hero />
         <Marquee />
         <Services />
@@ -104,6 +108,7 @@ export default function App() {
         <Faq />
         <Contact />
       </main>
+      <ChatWidget />
     </div>
   );
 }

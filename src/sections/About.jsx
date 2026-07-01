@@ -103,7 +103,7 @@ export default function About() {
 
           <FadeUp delay={0.14}>
             <p className="mt-6 max-w-2xl text-[15px] sm:text-base leading-[1.65] text-[var(--fg-soft)] body-justify">
-              I started freelancing in <span className="text-[var(--fg)]">2026</span>. A few months in and <span className="text-[var(--fg)]">12+ projects are deployed and live</span>: cafe, bar and restaurant sites, a premium gym, a heritage dining venue, a skincare brand, a salon booking site, plus the writing at 1kReach.
+              I started freelancing in <span className="text-[var(--fg)]">2026</span>. A few months in and <span className="text-[var(--fg)]">23 projects are deployed and live</span>: restaurant and rooftop-bar sites, several gyms, a heritage dining venue, skincare and salon brands, a Sydney makeup studio, a sales CRM, plus the writing at 1kReach.
             </p>
           </FadeUp>
 

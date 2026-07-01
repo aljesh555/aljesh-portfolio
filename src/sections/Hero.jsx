@@ -106,7 +106,7 @@ export default function Hero() {
         <div className="relative z-10 px-4 sm:px-8 lg:px-12 pb-8 sm:pb-10">
           <div className="border-t border-[var(--line)] pt-4 sm:pt-5">
             <dl className="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-6 mono text-[10px] uppercase tracking-[0.18em] text-center md:text-left">
-              <Fact term="Shipped" value="12+ projects live" />
+              <Fact term="Shipped" value="23 projects live" />
               <Fact term="Practising" value="Since MMXXVI" />
               <Fact term="Reading" value="BCA · Tribhuvan Univ." />
               <Fact term="Response" value="Within hours" />

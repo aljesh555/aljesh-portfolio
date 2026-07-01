@@ -10,7 +10,7 @@
 - **Location:** Kathmandu, Nepal (UTC+5:45)
 - **Studies:** BCA (Bachelor in Computer Application) at Tribhuvan University
 - **Freelancing since:** 2026
-- **Projects shipped & live:** 12+
+- **Projects shipped & live:** 23
 - **Engagement model:** Freelance commissions OR embedded with a team
 - **Freelances at:** Bitmicrosys LLC — engineering, SEO, AEO, GEO and content for international clients
 - **SEO / AEO / GEO / blog writing:** His own skill set — primarily SEO and long-form blogs. Live editorial output at https://1kreach.com/
@@ -53,6 +53,22 @@ Anis Raut is the canonical / legal name. Aljesh is a name he also uses online �
 - **Athlete Land** — Premium Kathmandu fitness & gym, membership and class booking — https://athlete-land.rautaljesh.workers.dev/
 - **SkinCura** — Editorial skincare brand site, dermatology consults & catalogue — https://skincura.pages.dev/
 - **Angel Hair Braids** — Salon brand site with services, gallery, testimonials and online booking — https://angelhairbraids.pages.dev/
+- **Fitness Durbar** — Premium Hattiban gym, membership tiers and group classes — https://fitnessdurbar.com.np/
+- **Shakti X Gym & Fitness** — Results-driven Gongabu strength gym, programs and consultations — https://shaktixgym.com.np/
+- **Shey Dolpo Shilajit** — Editorial Himalayan shilajit brand & shop with lab reports — https://shey-dolpo-shilajit.pages.dev/
+- **Crimson Academy** — English-medium school site, admissions and enquiry flow — https://crimson-academy.pages.dev/
+- **Cold Call Cockpit** — Sales CRM / cold-call SaaS dashboard: call queue, pipeline, follow-ups — https://cold-call-cockpit.pages.dev/
+- **Style by Saamna** — Hair & makeup studio in Auburn, Sydney (Australia), with booking — https://style-by-saamna.pages.dev/
+- **Hokkaido Sora** — Japanese rooftop dining in Maharajgunj, Kathmandu — https://hokkaido-sora.pages.dev/
+- **Copacabana Kathmandu** — 360° Brazilian rooftop lounge, restaurant & bar in Naxal — https://copacabana-kathmandu.pages.dev/
+- **Kathmandu Rooftop** — Two-level rooftop restaurant & bar above Thamel — https://kathmandu-rooftop.pages.dev/
+- **Skyline Restaurant & Bar** — Hilltop dining with a Kathmandu Valley view — https://skyline-restaurant.pages.dev/
+- **Aura Rooftop** — Rooftop restaurant & bar in front of Pashupatinath — https://aura-rooftop.pages.dev/
+- **Taste of Boudha** — Family-run Sherpa restaurant & bar, Lakeside Pokhara — https://taste-of-boudha.pages.dev/
+- **Spicy Mo:Mo House** — Editorial momo-house brand in Baneshwor, Kathmandu — https://spicy-momo-house.pages.dev/
+- **Karwaan** — Kathmandu open-mic series for words, music and comedy — https://karwaan.pages.dev/
+- **Travel & Paint** — Social paint-and-sip studio in Baluwatar, Kathmandu — https://travel-and-paint.pages.dev/
+- **FitNation Nepal** — Multi-branch fitness brand with gyms and a supplement shop — https://fitnation-nepal.pages.dev/
 - **1kReach** — Original SEO / AEO / GEO blog writing, primarily SEO long-form content — https://1kreach.com/
 
 ## Process

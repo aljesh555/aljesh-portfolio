@@ -29,7 +29,7 @@ export default function Work() {
             </Mask>
           </h2>
           <p className="mt-4 max-w-xl text-[14px] leading-[1.55] text-[var(--fg-soft)]">
-            Each card opens the deployed site in a new tab. A short selection of {WORK.length} from 12+ shipped products.
+            Each card opens the deployed site in a new tab — {WORK.length} products, shipped and live.
           </p>
         </div>
       </div>

@@ -1,0 +1,12 @@
+# Local-dev secrets for `wrangler pages dev`.
+# Copy this file to `.dev.vars` and fill in real values.
+# `.dev.vars` is gitignored — NEVER commit real keys.
+
+GEMINI_API_KEY=your-gemini-key
+BREVO_API_KEY=your-xkeysib-key
+SHEET_WEBHOOK_URL=https://script.google.com/macros/s/XXXXX/exec
+SHEET_SECRET=your-sheet-secret
+
+# Non-secret config also lives in wrangler.toml [vars]; override locally if needed:
+# BREVO_SENDER_EMAIL=rautaljesh@gmail.com
+# LEAD_NOTIFY_EMAIL=rautaljesh@gmail.com
