@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { X, ArrowUp, ArrowRight, Check, Paperclip, Mic, MessageCircle, FileText } from "lucide-react";
+import { X, ArrowUp, ArrowRight, Check, Paperclip, Mic, Sparkles, FileText } from "lucide-react";
 
 const GREETING =
   "Hello — I'm Aljesh's studio assistant. Ask about his work, services, or how to start a project. You can send photos, files, or a voice note too.";
@@ -223,42 +223,31 @@ export default function ChatWidget() {
   return (
     <>
       {/* ---------- Launcher ---------- */}
-      <div className="fixed bottom-5 right-5 z-[110] flex items-center gap-3">
-        <AnimatePresence>
-          {!open && (
-            <motion.span
-              key="hint" initial={{ opacity: 0, x: 8 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 8 }} transition={{ duration: 0.25 }}
-              className="mono hidden select-none sm:block"
-              style={{ fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--fg-soft)", background: "color-mix(in oklab, var(--bg-2), transparent 15%)", border: "1px solid var(--line)", borderRadius: 999, padding: "0.4rem 0.7rem", backdropFilter: "blur(8px)" }}
-            >
-              Ask Aljesh
+      <motion.button
+        layout
+        aria-label={open ? "Close AI assistant" : "Ask AI — open the chat assistant"}
+        onClick={() => setOpen((v) => !v)}
+        whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.95 }}
+        className="fixed bottom-5 right-5 z-[110] flex h-14 items-center gap-2 overflow-visible rounded-full"
+        style={{ background: "var(--fg)", color: "var(--bg)", border: "1px solid var(--line-strong)", boxShadow: "0 12px 34px color-mix(in oklab, var(--fg), transparent 78%)", paddingLeft: open ? 15 : 18, paddingRight: open ? 15 : 22 }}
+      >
+        {!rm && !open && (
+          <motion.span aria-hidden className="absolute inset-0 rounded-full" style={{ border: "1.5px solid var(--accent)" }}
+            initial={{ opacity: 0.45, scale: 1 }} animate={{ opacity: 0, scale: 1.3 }} transition={{ duration: 2.2, repeat: Infinity, ease: "easeOut" }} />
+        )}
+        <AnimatePresence mode="wait" initial={false}>
+          {open ? (
+            <motion.span key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }} className="grid place-items-center" style={{ width: 24 }}>
+              <X size={22} strokeWidth={1.75} />
+            </motion.span>
+          ) : (
+            <motion.span key="ask" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} className="flex items-center gap-2 whitespace-nowrap">
+              <Sparkles size={19} strokeWidth={2} />
+              <span className="mono" style={{ fontSize: "0.8rem", letterSpacing: "0.03em" }}>Ask AI</span>
             </motion.span>
           )}
         </AnimatePresence>
-        <motion.button
-          aria-label={open ? "Close chat" : "Ask Aljesh — open chat"}
-          onClick={() => setOpen((v) => !v)}
-          className="relative grid h-14 w-14 place-items-center rounded-full"
-          style={{ background: "var(--fg)", color: "var(--bg)", border: "1px solid var(--line-strong)", boxShadow: "0 12px 34px color-mix(in oklab, var(--fg), transparent 78%)" }}
-          whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.93 }}
-        >
-          {!rm && !open && (
-            <motion.span aria-hidden className="absolute inset-0 rounded-full" style={{ border: "1.5px solid var(--accent)" }}
-              initial={{ opacity: 0.5, scale: 1 }} animate={{ opacity: 0, scale: 1.5 }} transition={{ duration: 2.2, repeat: Infinity, ease: "easeOut" }} />
-          )}
-          <AnimatePresence mode="wait" initial={false}>
-            {open ? (
-              <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                <X size={22} strokeWidth={1.75} />
-              </motion.span>
-            ) : (
-              <motion.span key="chat" initial={{ scale: 0.4, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.4, opacity: 0 }} transition={{ duration: 0.2 }}>
-                <MessageCircle size={24} strokeWidth={1.75} />
-              </motion.span>
-            )}
-          </AnimatePresence>
-        </motion.button>
-      </div>
+      </motion.button>
 
       {/* ---------- Panel ---------- */}
       <AnimatePresence>
